@@ -7,8 +7,12 @@ import com.skanderjabouzi.dagger.engine.parts.Cylinders
 import com.skanderjabouzi.dagger.engine.parts.SparkPlugs
 import javax.inject.Inject
 
-class Engine @Inject constructor(val block: Block, val cylinders: Cylinders, val sparkPlugs: SparkPlugs ){
+class Engine @Inject constructor(val block: Block, val cylinders: Cylinders){
+
+    @Inject
+    lateinit var sparkPlugs: SparkPlugs
+
     fun build() {
-        Log.e(Car.TAG, "Building Engine with $block, $cylinders amd $sparkPlugs")
+        Log.e(Car.TAG, "Building Engine with $block, $cylinders and $sparkPlugs")
     }
 }

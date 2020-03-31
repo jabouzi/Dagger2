@@ -6,7 +6,11 @@ import com.skanderjabouzi.dagger.wheels.parts.Rims
 import com.skanderjabouzi.dagger.wheels.parts.Tires
 import javax.inject.Inject
 
-class Wheels @Inject constructor(val tires: Tires, val rims: Rims) {
+class Wheels @Inject constructor(val tires: Tires) {
+
+    @Inject
+    lateinit var rims: Rims
+
     fun assemble() {
         Log.e(Car.TAG, "Assemble Weels with $tires and $rims")
     }
