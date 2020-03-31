@@ -9,20 +9,22 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-abstract class WinterWheelsModule {
+class WinterWheelsModule constructor(val horsePower: Int){
 
-    @Binds
-    abstract fun bindWheels(winterWheels: WinterWheels): Wheels
+    @Provides
+    fun provideRims(): Rims {
+        return Rims()
+    }
 
-    companion object {
-        @Provides
-        fun provideRims(): Rims {
-            return Rims()
-        }
+    @Provides
+    fun provideTires(): Tires {
+        return Tires()
+    }
 
-        @Provides
-        fun provideTires(): Tires {
-            return Tires()
-        }
+    @Provides
+    fun ProvidesWheels(rims: Rims, tires: Tires): Wheels {
+        val wheels = WinterWheels(tires, rims)
+        wheels.setHorsePower(horsePower)
+        return wheels
     }
 }

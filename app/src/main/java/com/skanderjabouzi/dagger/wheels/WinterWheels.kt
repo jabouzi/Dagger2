@@ -8,7 +8,14 @@ import com.skanderjabouzi.wheels.parts.Tires
 import javax.inject.Inject
 
 class WinterWheels @Inject constructor(override val tires: Tires, override val rims: Rims) : Wheels {
+
+    private var horsePower: Int? = null
+
+    fun setHorsePower(horsePower: Int) {
+        this.horsePower = horsePower
+    }
+
     override fun assemble() {
-        Log.e(Car.TAG, "Assemble Winter Weels with $tires and $rims")
+        Log.e(Car.TAG, "Assemble Winter Weels with $tires and $rims with horsePower = $horsePower")
     }
 }
