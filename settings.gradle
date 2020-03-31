@@ -1,2 +1,3 @@
 rootProject.name='Dagger'
 include ':app'
+include ':engine'
