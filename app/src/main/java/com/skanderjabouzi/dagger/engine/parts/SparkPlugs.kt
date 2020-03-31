@@ -1,3 +1,5 @@
 package com.skanderjabouzi.dagger.engine.parts
 
-class SparkPlugs {}
+import javax.inject.Inject
+
+class SparkPlugs @Inject constructor() {}

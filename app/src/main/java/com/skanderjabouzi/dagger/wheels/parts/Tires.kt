@@ -1,3 +1,5 @@
 package com.skanderjabouzi.dagger.wheels.parts
 
-class Tires {}
+import javax.inject.Inject
+
+class Tires @Inject constructor() {}
