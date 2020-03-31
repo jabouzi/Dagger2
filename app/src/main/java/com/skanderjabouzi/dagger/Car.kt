@@ -1,6 +1,8 @@
 package com.skanderjabouzi.dagger
 
 import android.util.Log
+import com.skanderjabouzi.dagger.engine.Engine
+import com.skanderjabouzi.dagger.wheels.Wheels
 
 class Car constructor(val engine: Engine, val wheels: Wheels){
 
