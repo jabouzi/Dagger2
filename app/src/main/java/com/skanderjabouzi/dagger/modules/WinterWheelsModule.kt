@@ -9,7 +9,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class WinterWheelsModule constructor(val horsePower: Int){
+class WinterWheelsModule constructor(val height: Int){
 
     @Provides
     fun provideRims(): Rims {
@@ -24,7 +24,7 @@ class WinterWheelsModule constructor(val horsePower: Int){
     @Provides
     fun ProvidesWheels(rims: Rims, tires: Tires): Wheels {
         val wheels = WinterWheels(tires, rims)
-        wheels.setHorsePower(horsePower)
+        wheels.height = height
         return wheels
     }
 }

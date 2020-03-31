@@ -6,7 +6,7 @@ import com.skanderjabouzi.engine.extra.Nitro
 import com.skanderjabouzi.wheels.Wheels
 import javax.inject.Inject
 
-class Car @Inject constructor(val engine: Engine, val wheels: Wheels){
+class Car @Inject constructor(val driver: Driver, val engine: Engine, val wheels: Wheels){
 
     @Inject
     fun addNitro(nitro: Nitro) {
@@ -14,7 +14,7 @@ class Car @Inject constructor(val engine: Engine, val wheels: Wheels){
     }
 
     fun drive() {
-        Log.e(TAG, "Vroooom... with Engine $engine and Wheels $wheels")
+        Log.e(TAG, "$driver drives $this")
     }
 
     companion object {

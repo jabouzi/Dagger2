@@ -9,13 +9,13 @@ import javax.inject.Inject
 
 class WinterWheels @Inject constructor(override val tires: Tires, override val rims: Rims) : Wheels {
 
-    private var horsePower: Int? = null
+    var height: Int = 0
 
-    fun setHorsePower(horsePower: Int) {
-        this.horsePower = horsePower
-    }
+//    fun setHeight(height: Int) {
+//        this.height = height
+//    }
 
     override fun assemble() {
-        Log.e(Car.TAG, "Assemble Winter Weels with $tires and $rims with horsePower = $horsePower")
+        Log.e(Car.TAG, "Assemble Winter Weels with $tires and $rims with diametre = $height")
     }
 }
