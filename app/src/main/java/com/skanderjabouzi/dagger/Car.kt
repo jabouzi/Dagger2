@@ -6,6 +6,7 @@ import com.skanderjabouzi.engine.extra.Nitro
 import com.skanderjabouzi.wheels.Wheels
 import javax.inject.Inject
 
+@PerActivity
 class Car @Inject constructor(val driver: Driver, val engine: Engine, val wheels: Wheels){
 
     @Inject
