@@ -8,10 +8,11 @@ import com.skanderjabouzi.dagger.modules.SummerWheelsModule
 import com.skanderjabouzi.dagger.modules.WinterWheelsModule
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Named
 
 @PerActivity
-@Component(dependencies = [AppComponent::class], modules = [EngineModule::class, WinterWheelsModule::class])
+@Subcomponent(modules = [EngineModule::class, WinterWheelsModule::class])
 interface ActivityComponent {
     fun getCar(): Car
     fun inject2Activity(mainActivity: MainActivity)

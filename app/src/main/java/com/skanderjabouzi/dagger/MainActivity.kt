@@ -2,7 +2,8 @@ package com.skanderjabouzi.dagger
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.skanderjabouzi.dagger.components.DaggerActivityComponent
+import com.skanderjabouzi.dagger.components.AppComponent
+import com.skanderjabouzi.dagger.components.DaggerAppComponent
 import com.skanderjabouzi.dagger.modules.WinterWheelsModule
 import javax.inject.Inject
 
@@ -17,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val activityComponent = DaggerActivityComponent.builder().appComponent((application as CarApplication).component)
-            .winterWheelsModule(WinterWheelsModule(100)).build()
+        val activityComponent = (application as CarApplication).component.getActivityComponent(WinterWheelsModule(100))
         activityComponent.inject2Activity(this)
 
         car1.engine.build()
